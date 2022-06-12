@@ -5,7 +5,7 @@ import { BellIcon, BookmarkIcon, ClipboardIcon, DotsCircleHorizontalIcon, DotsHo
 
 const Sidebar = () => {
   return (
-    <div className="hidden sm:flex  flex-col p-2 fiexd xl:items-start">
+    <div className="hidden sm:flex flex-col p-2 fixed xl:items-start">
       {/* twitter logo */}
       <div className="hoverEffect">
         <Image
@@ -17,7 +17,7 @@ const Sidebar = () => {
       </div>
 
       {/* menu */}
-      <div className="mt-4 mb-2.5 xl:items-start">
+      <div className="mt-4 mb-2.5 xl:items-start w-full">
         <SidebarMenuItem text="Home" Icon={HomeIcon} active />
         <SidebarMenuItem text="Explore" Icon={HashtagIcon} />
         <SidebarMenuItem text="Notifications" Icon={BellIcon} />
@@ -29,7 +29,7 @@ const Sidebar = () => {
       </div>
 
       {/* button */}
-      <button className="bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline">Tweet</button>
+      <button className="bg-blue-400 mb-4 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline">Tweet</button>
 
       {/* mini profile */}
       <div className="hoverEffect text-gray-700 flex items-center justify-center xl:justify-start mt-auto">
