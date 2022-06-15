@@ -4,8 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
 import { API } from "./api/hello";
 
-export default function Home({posts}) {
-  
+export default function Home({posts, users}) {
   
   return (
     <div>
@@ -22,7 +21,7 @@ export default function Home({posts}) {
         <Feed />
 
         {/* Widgets */}
-        <Widgets  newsResult={posts.articles} />
+        <Widgets  newsResult={posts.articles} users={users} />
 
         {/* Modal */}
       </main>
@@ -32,9 +31,12 @@ export default function Home({posts}) {
 
 export async function getStaticProps() {
   const {data:posts} = await API.getNews()
+  const {data:users} = await API.getUsers()
+  
   return {
     props: {
       posts,
+      users: users.results
     },
   };
 }

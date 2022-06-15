@@ -9,3 +9,4 @@ export default function handler(req, res) {
 export const API = axios
 
 API.getNews = () => API.get('https://saurav.tech/NewsAPI/top-headlines/category/health/in.json')
+API.getUsers = () => API.get('https://randomuser.me/api/?results=50&inc=name,login,picture')
